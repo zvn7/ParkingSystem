@@ -1,0 +1,16 @@
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\obj\Debug\net5.0\ParkingSystem.csproj.AssemblyReference.cache
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\obj\Debug\net5.0\ParkingSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\obj\Debug\net5.0\ParkingSystem.AssemblyInfoInputs.cache
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\obj\Debug\net5.0\ParkingSystem.AssemblyInfo.cs
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\obj\Debug\net5.0\ParkingSystem.csproj.CoreCompileInputs.cache
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\bin\Debug\net5.0\ParkingSystem.exe
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\bin\Debug\net5.0\ParkingSystem.deps.json
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\bin\Debug\net5.0\ParkingSystem.runtimeconfig.json
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\bin\Debug\net5.0\ParkingSystem.runtimeconfig.dev.json
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\bin\Debug\net5.0\ParkingSystem.dll
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\bin\Debug\net5.0\ref\ParkingSystem.dll
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\bin\Debug\net5.0\ParkingSystem.pdb
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\obj\Debug\net5.0\ParkingSystem.dll
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\obj\Debug\net5.0\ref\ParkingSystem.dll
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\obj\Debug\net5.0\ParkingSystem.pdb
+D:\Study\EnigmaCamp\Test\parking-system\ParkingSystem\obj\Debug\net5.0\ParkingSystem.genruntimeconfig.cache
