@@ -2,7 +2,7 @@ public class Vehicle
 {
     public string RegistrationNumber { get; set; }
     public string Colour { get; set; }
-    public string Type { get; set; } // "Mobil" or "Motor"
+    public string Type { get; set; }
 
     public Vehicle(string registrationNumber, string colour, string type)
     {

@@ -3,49 +3,52 @@ using System.Collections.Generic;
 
 class ParkingLot
 {
-    private readonly int totalSlots;
-    private readonly Dictionary<int, Vehicle> slots;
+    private readonly int totalSlots; // Jumlah total slot parkir
+    private readonly Dictionary<int, Vehicle> slots; // Dictionary untuk menyimpan kendaraan berdasarkan nomor slot
 
     public ParkingLot(int totalSlots)
     {
-        this.totalSlots = totalSlots;
-        slots = new Dictionary<int, Vehicle>(totalSlots);
+        this.totalSlots = totalSlots; // Inisialisasi jumlah total slot parkir
+        slots = new Dictionary<int, Vehicle>(totalSlots); // Inisialisasi dictionary dengan kapasitas totalSlots
     }
 
     public void CreateParkingLot()
     {
-        Console.WriteLine($"Created a parking lot with {totalSlots} slots");
+        Console.WriteLine($"Created a parking lot with {totalSlots} slots"); // Cetak pesan ketika tempat parkir dibuat
     }
 
     public void Park(Vehicle vehicle)
     {
+        // Mencari slot parkir yang kosong dan memarkir kendaraan di sana
         for (int i = 1; i <= totalSlots; i++)
         {
-            if (!slots.ContainsKey(i))
+            if (!slots.ContainsKey(i)) // Jika slot i kosong
             {
-                slots[i] = vehicle;
-                Console.WriteLine($"Allocated slot number: {i}");
+                slots[i] = vehicle; // Parkir kendaraan di slot i
+                Console.WriteLine($"Allocated slot number: {i}"); // Cetak pesan alokasi slot
                 return;
             }
         }
-        Console.WriteLine("Sorry, parking lot is full");
+        Console.WriteLine("Sorry, parking lot is full"); // Cetak pesan jika parkiran penuh
     }
 
     public void Leave(int slotNumber)
     {
+        // Mengosongkan slot parkir
         if (slots.ContainsKey(slotNumber))
         {
-            slots.Remove(slotNumber);
-            Console.WriteLine($"Slot number {slotNumber} is free");
+            slots.Remove(slotNumber); // Hapus kendaraan dari slot
+            Console.WriteLine($"Slot number {slotNumber} is free"); // Cetak pesan slot kosong
         }
         else
         {
-            Console.WriteLine("Slot is already free");
+            Console.WriteLine("Slot is already free"); // Cetak pesan jika slot sudah kosong
         }
     }
 
     public void Status()
     {
+        // Cetak status parkiran (daftar kendaraan yang terparkir)
         Console.WriteLine("Slot\tNo.\t\tType\tRegistration No\tColour");
         foreach (var slot in slots)
         {
@@ -55,6 +58,7 @@ class ParkingLot
 
     public void TypeOfVehicles(string type)
     {
+        // Hitung jumlah kendaraan berdasarkan tipe
         int count = 0;
         foreach (var vehicle in slots.Values)
         {
@@ -63,11 +67,12 @@ class ParkingLot
                 count++;
             }
         }
-        Console.WriteLine(count);
+        Console.WriteLine(count); // Cetak jumlah kendaraan dari tipe yang ditentukan
     }
 
     public void RegistrationNumbersForVehiclesWithOddPlate()
     {
+        // Dapatkan daftar nomor registrasi kendaraan dengan plat ganjil
         List<string> registrationNumbers = new List<string>();
         foreach (var vehicle in slots.Values)
         {
@@ -76,11 +81,12 @@ class ParkingLot
                 registrationNumbers.Add(vehicle.RegistrationNumber);
             }
         }
-        Console.WriteLine(string.Join(", ", registrationNumbers));
+        Console.WriteLine(string.Join(", ", registrationNumbers)); // Cetak daftar nomor registrasi
     }
 
     public void RegistrationNumbersForVehiclesWithEvenPlate()
     {
+        // Dapatkan daftar nomor registrasi kendaraan dengan plat genap
         List<string> registrationNumbers = new List<string>();
         foreach (var vehicle in slots.Values)
         {
@@ -89,11 +95,12 @@ class ParkingLot
                 registrationNumbers.Add(vehicle.RegistrationNumber);
             }
         }
-        Console.WriteLine(string.Join(", ", registrationNumbers));
+        Console.WriteLine(string.Join(", ", registrationNumbers)); // Cetak daftar nomor registrasi
     }
 
     public void RegistrationNumbersForVehiclesWithColour(string colour)
     {
+        // Dapatkan daftar nomor registrasi kendaraan berdasarkan warna
         List<string> registrationNumbers = new List<string>();
         foreach (var vehicle in slots.Values)
         {
@@ -102,11 +109,12 @@ class ParkingLot
                 registrationNumbers.Add(vehicle.RegistrationNumber);
             }
         }
-        Console.WriteLine(string.Join(", ", registrationNumbers));
+        Console.WriteLine(string.Join(", ", registrationNumbers)); // Cetak daftar nomor registrasi
     }
 
     public void SlotNumbersForVehiclesWithColour(string colour)
     {
+        // Dapatkan daftar nomor slot berdasarkan warna kendaraan
         List<int> slotNumbers = new List<int>();
         foreach (var slot in slots)
         {
@@ -115,30 +123,32 @@ class ParkingLot
                 slotNumbers.Add(slot.Key);
             }
         }
-        Console.WriteLine(string.Join(", ", slotNumbers));
+        Console.WriteLine(string.Join(", ", slotNumbers)); // Cetak daftar nomor slot
     }
 
     public void SlotNumberForRegistrationNumber(string registrationNumber)
     {
+        // Cari nomor slot berdasarkan nomor registrasi
         foreach (var slot in slots)
         {
             if (slot.Value.RegistrationNumber.Equals(registrationNumber, StringComparison.OrdinalIgnoreCase))
             {
-                Console.WriteLine(slot.Key);
+                Console.WriteLine(slot.Key); // Cetak nomor slot jika ditemukan
                 return;
             }
         }
-        Console.WriteLine("Not found");
+        Console.WriteLine("Not found"); // Cetak pesan jika tidak ditemukan
     }
 
     private bool IsOddPlate(string registrationNumber)
     {
+        // Fungsi untuk menentukan apakah plat nomor ganjil
         string[] parts = registrationNumber.Split('-');
         int number;
         if (int.TryParse(parts[1], out number))
         {
-            return number % 2 != 0;
+            return number % 2 != 0; // Return true jika nomor ganjil
         }
-        return false;
+        return false; // Return false jika tidak bisa diubah menjadi angka
     }
 }
